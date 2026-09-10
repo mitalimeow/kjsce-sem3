@@ -1,5 +1,23 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        th,td{
+            border:1px solid black;
+            
+        }
+        th,td{
+            padding:15px;
+            text-align:left;
+        }
+    </style>
+</head>
+
 <body>
 <p>This text is normal.</p>
 <p><b>This text is bold.</b></p>
@@ -32,19 +50,36 @@
 <dd>Language used to ...</dd>
 </dl>
 
+
+
 <table style="width:100%">
+    <caption>Names</caption>
+
 <tr>
 <th>Firstname</th>
 <th>Lastname</th>
 <th>Age</th>
 </tr>
+
 <tr>
 <td>Jill</td>
 <td>Smith</td>
 <td>50</td>
 </tr>
+
 <tr>
+<td colspan ="2" rowspan="2">Jack</td>
+<td>40</td>
+</tr>
+
+<tr>
+
+<td>40</td>
+</tr>
+
 </table>
 
+
 </body>
+
 </html>
