@@ -1,11 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        th,td{
+            border:1px solid black;
+            
+        }
+        th,td{
+            padding:15px;
+            text-align:left;
+        }
+    </style>
 </head>
+
 <body>
-    
+<p>This text is normal.</p>
+<p><b>This text is bold.</b></p>
+<p><strong>This text is strong.</strong></p>
+<a href="www.google.com">
+
+    <img src="google.png">
+</a>
+
+<!-- types: 1, A, a, I, i -->
+<h2>An ordered HTML list</h2>
+<ol type="A">
+<li>Coffee</li>
+<li>Tea</li>
+<li>Milk</li>
+</ol>
+
+<!-- types: disc, square, circle, none -->
+<h2>Unordered List with Disc Bullets</h2>
+<ul style="list-style-type:disc">
+<li>Coffee</li>
+<li>Tea</li>
+<li>Milk</li>
+</ul>
+
+<dl>
+<dt>HTML</dt>
+<dd>A markup language ...</dd>
+<dt>CSS</dt>
+<dd>Language used to ...</dd>
+</dl>
+
+
+
+<table style="width:100%">
+    <caption>Names</caption>
+
+<tr>
+<th>Firstname</th>
+<th>Lastname</th>
+<th>Age</th>
+</tr>
+
+<tr>
+<td>Jill</td>
+<td>Smith</td>
+<td>50</td>
+</tr>
+
+<tr>
+<td colspan ="2" rowspan="2">Jack</td>
+<td>40</td>
+</tr>
+
+<tr>
+
+<td>40</td>
+</tr>
+
+</table>
+<br>
+
+<!-- target is _blank or _self -->
+<form target="_blank">
+<input type="text" name="firstname" value="default">
+<input type="password" name="pwd" value="default">
+<br>
+<textarea rows="5"></textarea>
+
+<br>
+<input type ="checkbox" name = "maths" checked>Maths
+<input type ="checkbox" name = "physics" >Physics
+<br>
+<input type="radio" name="upi">upi
+<input type="radio" name="upi" checked>cheque
+<br>
+
+<select  name="dropdown">
+    <option value="math">maths</option>
+    <option value="physics">physics</option>
+    <option selected>none</option>
+</select>
+</form>
+
+<input type="file" name="fileupload" accept="image/*">
+
+<!-- buttons -->
+<input type="submit" name="submit" value="submit">
+<input type="reset" name="reset" value="reset">
+
+<input type="button" name="ok" value="ok">
+
+<input type="image" name="imagebutton" src="./google.png">
+
+<br>
+<input type="color" name="mycolor">
+<br>
+<input type="date" name="mydate">
+<br>
+<input type="datetime" name="mydatetime">
+<br>
+<input type="email" name="myemail">
+<br>
+<input type="month" name="mymonth">
+<br>
+<input type="number" name="mynumber">
+<br>
+<input type="search" name="mysearch">
+<br>
+<input type="tel" name="mytel">
+<br>
+<input type="time" name="mytime">
+<br>
+<input type="url" name="myurl">
+<br>
+<input type="week" name="myweek">
 </body>
+
 </html>
