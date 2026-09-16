@@ -5,28 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Urine Test Strip Reader System</title>
 </head>
-<body>
+<body id="home" class="page">
 
-    <header>
-        <p>
-            
-            <span>General Health Hospital</span>
+    <header id="header" class="top">
+        <p id="hospital" class="brand" title="Hospital Name" style="color: navy;">
+            <span id="logo" class="logo" title="Logo Text">+ MediScan</span> General Health Hospital
         </p>
-
-        <h1>Urine Test Strip Reader System</h1>
+        <h1 id="title" class="heading" title="System Title" style="color: darkblue;">Urine Test Strip Reader System</h1>
+        <nav id="nav" class="nav">
+            <a href="index.html">Home</a> | 
+            <a href="test-information.html">Test Information</a> | 
+            <a href="about-system.html">About System</a> | 
+            <a href="test-parameters.html">Test Parameters</a> | 
+            <a href="navigation.html">Navigation</a> | 
+            <a href="urine-strip.html">Test Strip</a> | 
+            <a href="patient-report.html">Report</a> | 
+            <a href="patient-registration.html">Registration</a> | 
+            <a href="media.html">Media</a>
+        </nav>
     </header>
 
     <hr>
 
-    <main>
-        <section>
-            <h2>Portal Home</h2>
-            <p>
-                Welcome to the Urine Test Strip Reader System portal. This interface provides medical personnel with digitized urinalysis workflows and diagnostic tracking.
+    <main id="main" class="content">
+        <section id="intro" class="card">
+            <h2 id="portal" class="subhead">Portal Home</h2>
+            <p id="desc" class="text" style="font-size: 16px;">
+                Welcome to the Urine Test Strip Reader System portal. This interface provides digitized urinalysis workflows, automated colorimetric analysis, and diagnostic tracking for healthcare personnel.
             </p>
 
-            <p title="System Purpose: Automates the optical evaluation and digital reporting of chemical urinalysis test strips to support clinical diagnostics.">
-                <strong>System Purpose:</strong> 
+            <p id="purpose" class="tooltip" title="The Urine Test Strip Reader System automates the optical evaluation and digital reporting of chemical urinalysis test strips to eliminate visual subjectivity and support clinical diagnostics at point of care." style="cursor: help;">
+                <strong>System Purpose:</strong>
                 <span>(Hover over or tap this text to view the system purpose tooltip)</span>
             </p>
         </section>
@@ -34,11 +43,11 @@
 
     <hr>
 
-    <footer title="Footer Information">
-        <p>
-             <span>2026</span> General Health Hospital. All rights reserved.
+    <footer id="footer" class="bottom" title="Footer Information">
+        <p id="copy" class="foot-text">
+            &copy; <span>2026</span> General Health Hospital. All rights reserved.
         </p>
-        <p>
+        <p id="version" class="foot-text" style="font-weight: bold;">
             Software Version: <strong>v2.4.0</strong>
         </p>
     </footer>

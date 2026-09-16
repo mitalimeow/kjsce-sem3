@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Registration - Urine Test Strip Reader System</title>
+</head>
+<body id="reg-page" class="page">
+
+    <header id="header" class="top">
+        <p id="hospital" class="brand">
+            <span id="logo" class="logo">+ MediScan</span> General Health Hospital
+        </p>
+        <h1 id="title" class="heading">Online Patient Urinalysis Registration</h1>
+        <nav id="nav" class="nav">
+            <a href="index.html">Home</a> | 
+            <a href="test-information.html">Test Information</a> | 
+            <a href="about-system.html">About System</a> | 
+            <a href="test-parameters.html">Test Parameters</a> | 
+            <a href="navigation.html">Navigation</a> | 
+            <a href="urine-strip.html">Test Strip</a> | 
+            <a href="patient-report.html">Report</a> | 
+            <a href="patient-registration.html">Registration</a> | 
+            <a href="media.html">Media</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main id="main" class="content">
+
+        <section id="form-section" class="section">
+            <h2 id="form-head" class="subhead">Patient Intake &amp; Test Request Form</h2>
+            
+            <form id="reg-form" action="patient-report.html" method="get">
+                
+                <p>
+                    <label for="pid">Patient ID:</label><br>
+                    <input type="text" id="pid" name="pid" placeholder="e.g. PT-10495" required>
+                </p>
+
+                <p>
+                    <label for="name">Patient Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Full name" required>
+                </p>
+
+                <p>
+                    <label for="age">Age:</label><br>
+                    <input type="number" id="age" name="age" min="1" max="120" placeholder="Years" required>
+                </p>
+
+                <p>
+                    <label for="gender">Gender:</label><br>
+                    <select id="gender" name="gender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="mobile">Mobile Number:</label><br>
+                    <input type="tel" id="mobile" name="mobile" placeholder="10-digit mobile" required>
+                </p>
+
+                <p>
+                    <label for="email">Email Address:</label><br>
+                    <input type="email" id="email" name="email" placeholder="patient@example.com" required>
+                </p>
+
+                <p>
+                    <label for="testdate">Test Date:</label><br>
+                    <input type="date" id="testdate" name="testdate" required>
+                </p>
+
+                <p>
+                    <label for="docname">Referring Doctor Name:</label><br>
+                    <input type="text" id="docname" name="docname" placeholder="Dr. Firstname Lastname" required>
+                </p>
+
+                <fieldset id="symptoms-group">
+                    <legend>Presenting Symptoms (Select all that apply):</legend>
+                    <input type="checkbox" id="symp-fever" name="symptoms" value="fever">
+                    <label for="symp-fever">Fever / Chills</label><br>
+
+                    <input type="checkbox" id="symp-dysuria" name="symptoms" value="dysuria">
+                    <label for="symp-dysuria">Pain / Burning Sensation During Urination (Dysuria)</label><br>
+
+                    <input type="checkbox" id="symp-pain" name="symptoms" value="flank-pain">
+                    <label for="symp-pain">Lower Abdominal / Flank Pain</label><br>
+
+                    <input type="checkbox" id="symp-cloudy" name="symptoms" value="cloudy-urine">
+                    <label for="symp-cloudy">Cloudy or Turbid Urine</label><br>
+
+                    <input type="checkbox" id="symp-hematuria" name="symptoms" value="hematuria">
+                    <label for="symp-hematuria">Visible Blood in Urine (Hematuria)</label><br>
+
+                    <input type="checkbox" id="symp-freq" name="symptoms" value="frequency">
+                    <label for="symp-freq">Increased Frequency or Urgency</label>
+                </fieldset>
+
+                <br>
+
+                <fieldset id="format-group">
+                    <legend>Preferred Report Format:</legend>
+                    <input type="radio" id="fmt-pdf" name="report_format" value="pdf" checked>
+                    <label for="fmt-pdf">Digital PDF Download</label><br>
+
+                    <input type="radio" id="fmt-print" name="report_format" value="print">
+                    <label for="fmt-print">Printed Laboratory Slip</label><br>
+
+                    <input type="radio" id="fmt-email" name="report_format" value="email">
+                    <label for="fmt-email">Direct Email Delivery</label><br>
+
+                    <input type="radio" id="fmt-sms" name="report_format" value="sms">
+                    <label for="fmt-sms">SMS Summary with Secure Web Link</label>
+                </fieldset>
+
+                <br>
+
+                <p>
+                    <input type="submit" id="submit-btn" value="Register Patient &amp; Queue Test">
+                    <input type="reset" id="reset-btn" value="Reset Form">
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer id="footer" class="bottom">
+        <p id="copy" class="foot-text">
+            &copy; <span>2026</span> General Health Hospital. All rights reserved.
+        </p>
+        <p id="version" class="foot-text">
+            Software Version: <strong>v2.4.0</strong>
+        </p>
+    </footer>
+
+</body>
+</html>

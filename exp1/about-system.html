@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About System - Urine Test Strip Reader System</title>
+</head>
+<body id="about-page" class="page">
+
+    <header id="header" class="top">
+        <p id="hospital" class="brand">
+            <span id="logo" class="logo">+ MediScan</span> General Health Hospital
+        </p>
+        <h1 id="title" class="heading">About the System</h1>
+        <nav id="nav" class="nav">
+            <a href="index.html">Home</a> | 
+            <a href="test-information.html">Test Information</a> | 
+            <a href="about-system.html">About System</a> | 
+            <a href="test-parameters.html">Test Parameters</a> | 
+            <a href="navigation.html">Navigation</a> | 
+            <a href="urine-strip.html">Test Strip</a> | 
+            <a href="patient-report.html">Report</a> | 
+            <a href="patient-registration.html">Registration</a> | 
+            <a href="media.html">Media</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main id="main" class="content">
+
+        <div id="objectives" class="block-sec" style="background-color: #e6f7ff; padding: 12px; margin-bottom: 12px;">
+            <h2 id="obj-head" class="subhead">Objectives</h2>
+            <p id="obj-text" class="text">
+                The primary <b>objective</b> of this reader is to provide <strong>standardized diagnostic screening</strong> across all clinical departments. By replacing manual color comparison charts, the system minimizes <i>inter-observer variability</i>, ensures <u>high diagnostic accuracy</u>, and logs patient records directly into the electronic database using <code>HL7</code> and <code>FHIR</code> protocols.
+            </p>
+            <p class="text">
+                It supports point-of-care rapid testing to help <span style="font-weight: bold;">clinicians</span> identify kidney dysfunction, diabetes, and systemic urinary tract infections within <em>60 seconds</em>.
+            </p>
+        </div>
+
+        <div id="principle" class="block-sec" style="background-color: #f6ffed; padding: 12px; margin-bottom: 12px;">
+            <h2 id="princ-head" class="subhead">Working Principle</h2>
+            <p id="princ-text" class="text">
+                The device works on the principle of <b>reflectance photometry</b>. A calibrated <i>light-emitting diode</i> illuminates each chemical reagent pad on the urine strip. The reflected light intensity is detected by an optical sensor and converted into digital values.
+            </p>
+            <p class="text">
+                The onboard microprocessor compares measured reflectance values against <u>standard calibration curves</u> to compute analyte concentrations accurately. The process follows the standard equation <code>Reflectance (R) = (Sample Signal / Reference Signal) &times; 100%</code>.
+            </p>
+        </div>
+
+        <div id="benefits" class="block-sec" style="background-color: #fffbe6; padding: 12px; margin-bottom: 12px;">
+            <h2 id="ben-head" class="subhead">Benefits</h2>
+            <p id="ben-text" class="text">
+                Healthcare providers gain multiple clinical advantages:
+            </p>
+            <p class="text">
+                1. <b>Rapid Turnaround:</b> Results are calculated in <u>less than one minute</u>.
+                <br>
+                2. <i>Error Reduction:</i> Eliminates subjective color perception by different human operators.
+                <br>
+                3. <strong>Data Traceability:</strong> Every patient record is timestamped with <code>operator ID</code> and <code>strip lot number</code>.
+                <br>
+                4. <em>Portability:</em> Lightweight design allows convenient bedside and outpatient testing.
+            </p>
+        </div>
+
+        <div id="doctor-section" class="block-sec" style="background-color: #f9f0ff; padding: 12px; margin-bottom: 12px;">
+            <h2 id="doc-head" class="subhead">Doctor's Endorsement</h2>
+            <blockquote id="doc-quote" cite="https://www.generalhealth.org/staff/dr-sharma">
+                "The integration of the automated Urine Test Strip Reader has significantly streamlined our triage and outpatient diagnostics. It provides prompt, reproducible results, allowing our clinical team to make well-informed therapeutic decisions immediately."
+            </blockquote>
+            <p id="doc-name" class="text">
+                &mdash; <cite><strong>Dr. Rajesh Sharma</strong>, Head of Department, Clinical Pathology &amp; Nephrology</cite>
+            </p>
+        </div>
+
+    </main>
+
+    <hr>
+
+    <footer id="footer" class="bottom">
+        <p id="copy" class="foot-text">
+            &copy; <span>2026</span> General Health Hospital. All rights reserved.
+        </p>
+        <p id="version" class="foot-text">
+            Software Version: <strong>v2.4.0</strong>
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urine Test Strip - Urine Test Strip Reader System</title>
+</head>
+<body id="strip-page" class="page">
+
+    <header id="header" class="top">
+        <p id="hospital" class="brand">
+            <span id="logo" class="logo">+ MediScan</span> General Health Hospital
+        </p>
+        <h1 id="title" class="heading">Interactive Urine Test Strip</h1>
+        <nav id="nav" class="nav">
+            <a href="index.html">Home</a> | 
+            <a href="test-information.html">Test Information</a> | 
+            <a href="about-system.html">About System</a> | 
+            <a href="test-parameters.html">Test Parameters</a> | 
+            <a href="navigation.html">Navigation</a> | 
+            <a href="urine-strip.html">Test Strip</a> | 
+            <a href="patient-report.html">Report</a> | 
+            <a href="patient-registration.html">Registration</a> | 
+            <a href="media.html">Media</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <main id="main" class="content">
+
+        <section id="strip-section" class="section">
+            <h2 id="strip-head" class="subhead">Interactive Test Strip Image Map</h2>
+            <p id="instr-text" class="text">
+                Click on any of the 10 reagent pads on the strip image below to jump directly to its clinical diagnostic description:
+            </p>
+
+            <img id="strip-img" src="strip.svg" alt="10-Parameter Urine Reagent Strip" usemap="#strip-map" width="160" height="520">
+
+            <map id="strip-map" name="strip-map">
+                <area shape="rect" coords="30,20,130,55" href="#leukocytes" alt="Leukocytes Reagent Pad" title="Click to view Leukocytes details">
+                <area shape="rect" coords="30,65,130,100" href="#nitrite" alt="Nitrite Reagent Pad" title="Click to view Nitrite details">
+                <area shape="rect" coords="30,110,130,145" href="#urobilinogen" alt="Urobilinogen Reagent Pad" title="Click to view Urobilinogen details">
+                <area shape="rect" coords="30,155,130,190" href="#protein" alt="Protein Reagent Pad" title="Click to view Protein details">
+                <area shape="rect" coords="30,200,130,235" href="#ph" alt="pH Reagent Pad" title="Click to view pH details">
+                <area shape="rect" coords="30,245,130,280" href="#blood" alt="Blood Reagent Pad" title="Click to view Blood details">
+                <area shape="rect" coords="30,290,130,325" href="#sg" alt="Specific Gravity Reagent Pad" title="Click to view Specific Gravity details">
+                <area shape="rect" coords="30,335,130,370" href="#ketones" alt="Ketones Reagent Pad" title="Click to view Ketones details">
+                <area shape="rect" coords="30,380,130,415" href="#bilirubin" alt="Bilirubin Reagent Pad" title="Click to view Bilirubin details">
+                <area shape="rect" coords="30,425,130,460" href="#glucose" alt="Glucose Reagent Pad" title="Click to view Glucose details">
+            </map>
+        </section>
+
+        <hr>
+
+        <section id="descriptions" class="section">
+            <h2 id="desc-head" class="subhead">Reagent Pad Diagnostic Descriptions</h2>
+
+            <div id="leukocytes" class="item">
+                <h3 class="item-title">1. Leukocytes</h3>
+                <p class="text">
+                    Detects leukocyte esterase released by white blood cells. A positive result strongly suggests pyuria, cystitis, or pyelonephritis.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="nitrite" class="item">
+                <h3 class="item-title">2. Nitrite</h3>
+                <p class="text">
+                    Detects conversion of nitrate to nitrite by Gram-negative bacteria such as <i>Escherichia coli</i>. Diagnostic for active bacterial urinary tract infection.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="urobilinogen" class="item">
+                <h3 class="item-title">3. Urobilinogen</h3>
+                <p class="text">
+                    Formed by bacterial degradation of bilirubin in the intestines. Elevated levels indicate hemolytic anemia or hepatocellular damage.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="protein" class="item">
+                <h3 class="item-title">4. Protein</h3>
+                <p class="text">
+                    Primarily sensitive to albumin. Proteinuria indicates glomerular permeability impairment, preeclampsia, or diabetic nephropathy.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="ph" class="item">
+                <h3 class="item-title">5. pH</h3>
+                <p class="text">
+                    Measures urinary acidity or alkalinity (normal 4.5 - 8.0). Helps evaluate renal tubular acidosis, metabolic status, and risk of renal calculi.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="blood" class="item">
+                <h3 class="item-title">6. Blood</h3>
+                <p class="text">
+                    Detects intact erythrocytes, free hemoglobin, and myoglobin through pseudoperoxidase activity. Indicates trauma, stones, or glomerular lesions.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="sg" class="item">
+                <h3 class="item-title">7. Specific Gravity</h3>
+                <p class="text">
+                    Measures the concentration of ionic solutes in urine. Normal values range from 1.005 to 1.030, indicating renal concentrating capacity and hydration state.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="ketones" class="item">
+                <h3 class="item-title">8. Ketones</h3>
+                <p class="text">
+                    Detects acetoacetic acid resulting from fatty acid oxidation. Significant in screening diabetic ketoacidosis, starvation, and metabolic stress.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="bilirubin" class="item">
+                <h3 class="item-title">9. Bilirubin</h3>
+                <p class="text">
+                    Presence of conjugated bilirubin in urine indicates biliary obstruction, hepatitis, or early liver disease before clinical jaundice develops.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+            <div id="glucose" class="item">
+                <h3 class="item-title">10. Glucose</h3>
+                <p class="text">
+                    Utilizes glucose oxidase reaction to detect glycosuria. Indicates serum glucose surpassing the renal threshold, as seen in diabetes mellitus.
+                </p>
+                <p><a href="#strip-img">Back to top of strip &uarr;</a></p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer id="footer" class="bottom">
+        <p id="copy" class="foot-text">
+            &copy; <span>2026</span> General Health Hospital. All rights reserved.
+        </p>
+        <p id="version" class="foot-text">
+            Software Version: <strong>v2.4.0</strong>
+        </p>
+    </footer>
+
+</body>
+</html>
