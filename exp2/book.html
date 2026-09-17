@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store - External CSS Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
+    <header>
+        <h1>Medical &amp; Technical Book Store</h1>
+        <p>Your Portal for Quality Diagnostics &amp; Healthcare Literature</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="book.html">Book Catalog</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#prices">Price List</a></li>
+                <li><a href="#register">Registration</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <div class="categories-card">
+                <h2>Book Categories</h2>
+                <ul>
+                    <li>Urinalysis &amp; Diagnostics</li>
+                    <li>Clinical Pathology</li>
+                    <li>Nephrology &amp; Renal Health</li>
+                    <li>Laboratory Instruments</li>
+                    <li>Biochemistry Standards</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content">
+            
+            <div class="offer-box">
+                SPECIAL OFFER: Get 25% Off on All Urinalysis Diagnostic Handbooks This Week!
+            </div>
+
+            <h2>Featured Book Catalog</h2>
+            <div class="book-card">
+                <h3>Urinalysis Handbook</h3>
+                <p>Comprehensive guide to 10-parameter reagent test strips.</p>
+                <p><strong>$45.00</strong></p>
+            </div>
+
+            <div class="book-card">
+                <h3>Clinical Pathology</h3>
+                <p>Standard protocols for point-of-care rapid testing.</p>
+                <p><strong>$60.00</strong></p>
+            </div>
+
+            <div class="book-card">
+                <h3>Renal Diagnostics</h3>
+                <p>In-depth study of kidney dysfunction markers.</p>
+                <p><strong>$55.00</strong></p>
+            </div>
+
+            <h2>Equipment &amp; Literature Gallery</h2>
+            <div class="gallery" id="gallery">
+                <img src="../exp1/google.png" alt="Gallery Item 1">
+                <img src="../exp1/strip.svg" alt="Gallery Item 2">
+                <img src="../exp1/google.png" alt="Gallery Item 3">
+            </div>
+
+            <h2>Price List</h2>
+            <table class="price-table" id="prices">
+                <thead>
+                    <tr>
+                        <th>Item Code</th>
+                        <th>Book / Resource Title</th>
+                        <th>Category</th>
+                        <th>Price ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BK-101</td>
+                        <td>Urinalysis Handbook</td>
+                        <td>Diagnostics</td>
+                        <td>45.00</td>
+                    </tr>
+                    <tr>
+                        <td>BK-102</td>
+                        <td>Clinical Pathology Guide</td>
+                        <td>Pathology</td>
+                        <td>60.00</td>
+                    </tr>
+                    <tr>
+                        <td>BK-103</td>
+                        <td>Renal Diagnostics Manual</td>
+                        <td>Nephrology</td>
+                        <td>55.00</td>
+                    </tr>
+                    <tr>
+                        <td>BK-104</td>
+                        <td>Laboratory Protocols</td>
+                        <td>Instrumentation</td>
+                        <td>70.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 id="register">User Registration Form</h2>
+            <form class="reg-form" action="#" method="post">
+                <fieldset>
+                    <legend>Account Information</legend>
+                    
+                    <label for="username">User Name:</label>
+                    <input type="text" id="username" name="username" placeholder="Enter full name" required>
+
+                    <label for="useremail">Email Address:</label>
+                    <input type="email" id="useremail" name="useremail" placeholder="Enter email address" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter contact number">
+
+                    <label for="regdate">Registration Date:</label>
+                    <input type="date" id="regdate" name="regdate">
+                </fieldset>
+
+                <input type="submit" value="Submit Registration">
+            </form>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Medical &amp; Technical Book Store. All rights reserved.</p>
+        <p>Designed with Site-Wide External CSS Theme.</p>
+    </footer>
+
+</body>
+</html>

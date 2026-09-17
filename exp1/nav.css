@@ -1,0 +1,21 @@
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
+nav li {
+    display: inline-block;
+    margin: 0 5px;
+}
+nav a {
+    color: #0056b3;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 12px;
+}
+nav a:hover {
+    color: #002752;
+    text-decoration: underline;
+    background-color: #e2e8f0;
+}

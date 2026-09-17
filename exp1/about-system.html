@@ -4,24 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About System - Urine Test Strip Reader System</title>
+    <link rel="stylesheet" href="nav.css">
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 0;
+            text-align: center;
+        }
+        nav li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+        nav a {
+            color: #0056b3;
+            text-decoration: none;
+            display: inline-block;
+            padding: 6px 12px;
+        }
+        nav a:hover {
+            color: #002752;
+            text-decoration: underline;
+            background-color: #e2e8f0;
+        }
+    </style>
 </head>
 <body id="about-page" class="page">
 
-    <header id="header" class="top">
-        <p id="hospital" class="brand">
+    <header id="header" class="top" style="background-color: #f0f4f8; padding: 20px; border: 2px solid #003366;">
+        <p id="hospital" class="brand" style="color: #003366; text-align: center; margin: 0; font-size: 18px;">
             <span id="logo" class="logo">+ MediScan</span> General Health Hospital
         </p>
-        <h1 id="title" class="heading">About the System</h1>
+        <p id="slogan" class="slogan" style="color: #555555; text-align: center; margin: 5px 0;">Automated Urinalysis &amp; Diagnostic Care</p>
+        <h1 id="title" class="heading" style="color: #002244; text-align: center; margin: 10px 0;">About the System</h1>
         <nav id="nav" class="nav">
-            <a href="index.html">Home</a> | 
-            <a href="test-information.html">Test Information</a> | 
-            <a href="about-system.html">About System</a> | 
-            <a href="test-parameters.html">Test Parameters</a> | 
-            <a href="navigation.html">Navigation</a> | 
-            <a href="urine-strip.html">Test Strip</a> | 
-            <a href="patient-report.html">Report</a> | 
-            <a href="patient-registration.html">Registration</a> | 
-            <a href="media.html">Media</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="test-information.html">Test Information</a></li>
+                <li><a href="about-system.html">About System</a></li>
+                <li><a href="test-parameters.html">Test Parameters</a></li>
+                <li><a href="navigation.html">Navigation</a></li>
+                <li><a href="urine-strip.html">Test Strip</a></li>
+                <li><a href="patient-report.html">Report</a></li>
+                <li><a href="patient-registration.html">Registration</a></li>
+                <li><a href="media.html">Media</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -29,17 +56,17 @@
 
     <main id="main" class="content">
 
-        <div id="objectives" class="block-sec" style="background-color: #e6f7ff; padding: 12px; margin-bottom: 12px;">
+        <div id="objectives" class="block-sec">
             <h2 id="obj-head" class="subhead">Objectives</h2>
             <p id="obj-text" class="text">
                 The primary <b>objective</b> of this reader is to provide <strong>standardized diagnostic screening</strong> across all clinical departments. By replacing manual color comparison charts, the system minimizes <i>inter-observer variability</i>, ensures <u>high diagnostic accuracy</u>, and logs patient records directly into the electronic database using <code>HL7</code> and <code>FHIR</code> protocols.
             </p>
             <p class="text">
-                It supports point-of-care rapid testing to help <span style="font-weight: bold;">clinicians</span> identify kidney dysfunction, diabetes, and systemic urinary tract infections within <em>60 seconds</em>.
+                It supports point-of-care rapid testing to help <span>clinicians</span> identify kidney dysfunction, diabetes, and systemic urinary tract infections within <em>60 seconds</em>.
             </p>
         </div>
 
-        <div id="principle" class="block-sec" style="background-color: #f6ffed; padding: 12px; margin-bottom: 12px;">
+        <div id="principle" class="block-sec">
             <h2 id="princ-head" class="subhead">Working Principle</h2>
             <p id="princ-text" class="text">
                 The device works on the principle of <b>reflectance photometry</b>. A calibrated <i>light-emitting diode</i> illuminates each chemical reagent pad on the urine strip. The reflected light intensity is detected by an optical sensor and converted into digital values.
@@ -49,7 +76,7 @@
             </p>
         </div>
 
-        <div id="benefits" class="block-sec" style="background-color: #fffbe6; padding: 12px; margin-bottom: 12px;">
+        <div id="benefits" class="block-sec">
             <h2 id="ben-head" class="subhead">Benefits</h2>
             <p id="ben-text" class="text">
                 Healthcare providers gain multiple clinical advantages:
@@ -65,7 +92,7 @@
             </p>
         </div>
 
-        <div id="doctor-section" class="block-sec" style="background-color: #f9f0ff; padding: 12px; margin-bottom: 12px;">
+        <div id="doctor-section" class="block-sec">
             <h2 id="doc-head" class="subhead">Doctor's Endorsement</h2>
             <blockquote id="doc-quote" cite="https://www.generalhealth.org/staff/dr-sharma">
                 "The integration of the automated Urine Test Strip Reader has significantly streamlined our triage and outpatient diagnostics. It provides prompt, reproducible results, allowing our clinical team to make well-informed therapeutic decisions immediately."
