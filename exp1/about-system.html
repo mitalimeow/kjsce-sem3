@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,16 +13,19 @@
             margin: 10px 0;
             text-align: center;
         }
+
         nav li {
             display: inline-block;
             margin: 0 5px;
         }
+
         nav a {
             color: #0056b3;
             text-decoration: none;
             display: inline-block;
             padding: 6px 12px;
         }
+
         nav a:hover {
             color: #002752;
             text-decoration: underline;
@@ -29,13 +33,14 @@
         }
     </style>
 </head>
+
 <body id="about-page" class="page">
 
     <header id="header" class="top" style="background-color: #f0f4f8; padding: 20px; border: 2px solid #003366;">
         <p id="hospital" class="brand" style="color: #003366; text-align: center; margin: 0; font-size: 18px;">
-            <span id="logo" class="logo">+ MediScan</span> General Health Hospital
+            <span id="logo" class="logo">MediScan</span> General Health Hospital
         </p>
-        <p id="slogan" class="slogan" style="color: #555555; text-align: center; margin: 5px 0;">Automated Urinalysis &amp; Diagnostic Care</p>
+        <p id="slogan" class="slogan" style="color: #555555; text-align: center; margin: 5px 0;">Urine Analysis</p>
         <h1 id="title" class="heading" style="color: #002244; text-align: center; margin: 10px 0;">About the System</h1>
         <nav id="nav" class="nav">
             <ul>
@@ -59,20 +64,29 @@
         <div id="objectives" class="block-sec">
             <h2 id="obj-head" class="subhead">Objectives</h2>
             <p id="obj-text" class="text">
-                The primary <b>objective</b> of this reader is to provide <strong>standardized diagnostic screening</strong> across all clinical departments. By replacing manual color comparison charts, the system minimizes <i>inter-observer variability</i>, ensures <u>high diagnostic accuracy</u>, and logs patient records directly into the electronic database using <code>HL7</code> and <code>FHIR</code> protocols.
+                The primary <b>objective</b> of this reader is to provide <strong>standardized diagnostic
+                    screening</strong> across all clinical departments. By replacing manual color comparison charts, the
+                system minimizes <i>inter-observer variability</i>, ensures <u>high diagnostic accuracy</u>, and logs
+                patient records directly into the electronic database using <code>HL7</code> and <code>FHIR</code>
+                protocols.
             </p>
             <p class="text">
-                It supports point-of-care rapid testing to help <span>clinicians</span> identify kidney dysfunction, diabetes, and systemic urinary tract infections within <em>60 seconds</em>.
+                It supports point-of-care rapid testing to help <span>clinicians</span> identify kidney dysfunction,
+                diabetes, and systemic urinary tract infections within <em>60 seconds</em>.
             </p>
         </div>
 
         <div id="principle" class="block-sec">
             <h2 id="princ-head" class="subhead">Working Principle</h2>
             <p id="princ-text" class="text">
-                The device works on the principle of <b>reflectance photometry</b>. A calibrated <i>light-emitting diode</i> illuminates each chemical reagent pad on the urine strip. The reflected light intensity is detected by an optical sensor and converted into digital values.
+                The device works on the principle of <b>reflectance photometry</b>. A calibrated <i>light-emitting
+                    diode</i> illuminates each chemical reagent pad on the urine strip. The reflected light intensity is
+                detected by an optical sensor and converted into digital values.
             </p>
             <p class="text">
-                The onboard microprocessor compares measured reflectance values against <u>standard calibration curves</u> to compute analyte concentrations accurately. The process follows the standard equation <code>Reflectance (R) = (Sample Signal / Reference Signal) &times; 100%</code>.
+                The onboard microprocessor compares measured reflectance values against <u>standard calibration
+                    curves</u> to compute analyte concentrations accurately. The process follows the standard equation
+                <code>Reflectance (R) = (Sample Signal / Reference Signal) &times; 100%</code>.
             </p>
         </div>
 
@@ -86,7 +100,8 @@
                 <br>
                 2. <i>Error Reduction:</i> Eliminates subjective color perception by different human operators.
                 <br>
-                3. <strong>Data Traceability:</strong> Every patient record is timestamped with <code>operator ID</code> and <code>strip lot number</code>.
+                3. <strong>Data Traceability:</strong> Every patient record is timestamped with <code>operator ID</code>
+                and <code>strip lot number</code>.
                 <br>
                 4. <em>Portability:</em> Lightweight design allows convenient bedside and outpatient testing.
             </p>
@@ -95,10 +110,13 @@
         <div id="doctor-section" class="block-sec">
             <h2 id="doc-head" class="subhead">Doctor's Endorsement</h2>
             <blockquote id="doc-quote" cite="https://www.generalhealth.org/staff/dr-sharma">
-                "The integration of the automated Urine Test Strip Reader has significantly streamlined our triage and outpatient diagnostics. It provides prompt, reproducible results, allowing our clinical team to make well-informed therapeutic decisions immediately."
+                "The integration of the automated Urine Test Strip Reader has significantly streamlined our triage and
+                outpatient diagnostics. It provides prompt, reproducible results, allowing our clinical team to make
+                well-informed therapeutic decisions immediately."
             </blockquote>
             <p id="doc-name" class="text">
-                &mdash; <cite><strong>Dr. Rajesh Sharma</strong>, Head of Department, Clinical Pathology &amp; Nephrology</cite>
+                &mdash; <cite><strong>Dr. Rajesh Sharma</strong>, Head of Department, Clinical Pathology &amp;
+                    Nephrology</cite>
             </p>
         </div>
 
@@ -116,4 +134,5 @@
     </footer>
 
 </body>
+
 </html>
