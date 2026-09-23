@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 5 - Healthcare Portal JavaScript Programs</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        .card {
+            background: #fafafa;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #003366;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #003d82;
+        }
+        .output-box {
+            background: #272822;
+            color: #f8f8f2;
+            padding: 12px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+        .error-field {
+            border: 2px solid #e53e3e !important;
+            background-color: #fff5f5 !important;
+        }
+        .error-message {
+            color: #e53e3e;
+            font-size: 12px;
+            margin-top: 4px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Experiment 5: Healthcare JS Programs</h1>
+
+    <!-- Task 1 Demo Card -->
+    <div class="card">
+        <h2>Task 1: Patient Registration & Amount Calculation</h2>
+        <div class="form-group">
+            <label for="t1-name">Patient Name:</label>
+            <input type="text" id="t1-name" value="Rahul Sharma">
+        </div>
+        <div class="form-group">
+            <label for="t1-pid">Patient ID:</label>
+            <input type="text" id="t1-pid" value="PAT-1001">
+        </div>
+        <div class="form-group">
+            <label for="t1-age">Age:</label>
+            <input type="number" id="t1-age" value="65">
+        </div>
+        <div class="form-group">
+            <label for="t1-cons">Consultation Fee (₹):</label>
+            <input type="number" id="t1-cons" value="500">
+        </div>
+        <div class="form-group">
+            <label for="t1-reg">Registration Fee (₹):</label>
+            <input type="number" id="t1-reg" value="100">
+        </div>
+        <button class="btn" onclick="runTask1()">Calculate Total & Discount</button>
+        <div id="t1-output" class="output-box">Click button to calculate...</div>
+    </div>
+
+    <!-- Task 2 Demo Card -->
+    <div class="card">
+        <h2>Task 2: Appointment Priority Decision</h2>
+        <div class="form-group">
+            <label for="t2-age">Age:</label>
+            <input type="number" id="t2-age" value="62">
+        </div>
+        <div class="form-group">
+            <label for="t2-temp">Temperature (°C):</label>
+            <input type="number" step="0.1" id="t2-temp" value="38.5">
+        </div>
+        <div class="form-group">
+            <label for="t2-sev">Severity Level:</label>
+            <select id="t2-sev">
+                <option value="Mild">Mild</option>
+                <option value="Moderate" selected>Moderate</option>
+                <option value="Severe">Severe</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="t2-emerg">Emergency Status:</label>
+            <select id="t2-emerg">
+                <option value="No" selected>No</option>
+                <option value="Yes">Yes</option>
+            </select>
+        </div>
+        <button class="btn" onclick="runTask2()">Determine Priority</button>
+        <div id="t2-output" class="output-box">Click button to evaluate priority...</div>
+    </div>
+
+    <!-- Task 3 Demo Card -->
+    <div class="card">
+        <h2>Task 3: Patient Registration Object</h2>
+        <button class="btn" onclick="runTask3()">Display Patient Object & Methods</button>
+        <div id="t3-output" class="output-box">Click button to view object data...</div>
+    </div>
+
+    <!-- Task 4 Demo Card -->
+    <div class="card">
+        <h2>Task 4: Patient Age Array Operations</h2>
+        <p><strong>Array:</strong> <code>[22, 35, 67, 45, 29, 72, 56, 18, 64, 40]</code></p>
+        <button class="btn" onclick="runTask4()">Perform Array Analysis</button>
+        <div id="t4-output" class="output-box">Click button to analyze array...</div>
+    </div>
+
+    <!-- Task 5 Demo Card -->
+    <div class="card">
+        <h2>Task 5: Registration Validation using Regular Expressions</h2>
+        <form id="exp5-demo-form">
+            <div class="form-group">
+                <label for="pname">Patient Name (Only Alphabets):</label>
+                <input type="text" id="pname" value="Rahul Sharma">
+                <span id="err-pname" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="pid">Patient ID (Format: PAT-1234):</label>
+                <input type="text" id="pid" value="PAT-1234">
+                <span id="err-pid" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number (10 digits):</label>
+                <input type="text" id="mobile" value="9876543210">
+                <span id="err-mobile" class="error-message"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="text" id="email" value="rahul@gmail.com">
+                <span id="err-email" class="error-message"></span>
+            </div>
+            <button type="submit" class="btn">Validate & Submit</button>
+        </form>
+        <div id="t5-output" class="output-box">Fill form and submit to validate...</div>
+    </div>
+
+</div>
+
+<script src="task1.js"></script>
+<script src="task2.js"></script>
+<script src="task3.js"></script>
+<script src="task4.js"></script>
+<script src="task5.js"></script>
+
+<script>
+    function runTask1() {
+        const details = {
+            pname: document.getElementById('t1-name').value,
+            pid: document.getElementById('t1-pid').value,
+            page: parseInt(document.getElementById('t1-age').value) || 0,
+            cons_fee: parseFloat(document.getElementById('t1-cons').value) || 0,
+            reg_fee: parseFloat(document.getElementById('t1-reg').value) || 0,
+            reg_status: true
+        };
+        const res = calculateRegistrationAmount(details);
+        document.getElementById('t1-output').textContent = 
+            `Patient Name: ${res.pname}\nPatient ID: ${res.pid}\nAge: ${res.page} (${res.discount_eligibility ? "Senior Citizen 20% Discount" : "Regular"})\nGross Amount: ₹${res.gross_total}\nDiscount: ₹${res.discount}\nNet Payable: ₹${res.net_total}\nStatus: ${res.reg_status ? "Registered" : "Not Registered"}`;
+    }
+
+    function runTask2() {
+        const params = {
+            page: parseInt(document.getElementById('t2-age').value) || 0,
+            ptemp: parseFloat(document.getElementById('t2-temp').value) || 0,
+            psev: document.getElementById('t2-sev').value,
+            pemergency: document.getElementById('t2-emerg').value
+        };
+        const res = determineAppointmentPriority(params);
+        document.getElementById('t2-output').textContent = 
+            `Age: ${res.page}\nTemp: ${res.ptemp}°C\nSeverity: ${res.psev}\nEmergency: ${res.isEmergency ? "Yes" : "No"}\nRecommendation: ${res.recommendation}`;
+    }
+
+    function runTask3() {
+        const category = patient.checkAgeCategory();
+        document.getElementById('t3-output').textContent = 
+            `Patient Name: ${patient.patientName}\nPatient ID: ${patient.patientId}\nAge: ${patient.age} (${category})\nGender: ${patient.gender}\nBlood Group: ${patient.bloodGroup}\nMobile: ${patient.mobile}\nDepartment: ${patient.department}\nAppointment Type: ${patient.appointmentType}\nStatus: ${patient.registrationStatus}`;
+    }
+
+    function runTask4() {
+        const res = analyzePatientAges();
+        document.getElementById('t4-output').textContent = 
+            `All Ages: [${res.allAges.join(', ')}]\nMinimum Age: ${res.minAge}\nMaximum Age: ${res.maxAge}\nAverage Age: ${res.avgAge.toFixed(2)}\nSenior Citizens (>=60): ${res.seniorCount}\nMinors (<18): ${res.minorCount}\nAges > 60: [${res.seniorsAbove60.join(', ')}]`;
+    }
+
+    document.getElementById('exp5-demo-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const details = {
+            pname: document.getElementById('pname').value,
+            pid: document.getElementById('pid').value,
+            mobile: document.getElementById('mobile').value,
+            email: document.getElementById('email').value
+        };
+        const res = validateRegistrationForm(details);
+        
+        document.getElementById('err-pname').textContent = res.nameRes.message;
+        document.getElementById('err-pid').textContent = res.pidRes.message;
+        document.getElementById('err-mobile').textContent = res.mobileRes.message;
+        document.getElementById('err-email').textContent = res.emailRes.message;
+
+        if (res.isAllValid) {
+            document.getElementById('t5-output').textContent = "SUCCESS: All registration fields passed regex validation!";
+        } else {
+            document.getElementById('t5-output').textContent = "FAILURE: Validation errors detected. Check form messages above.";
+        }
+    });
+</script>
+</body>
+</html>

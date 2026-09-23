@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <button id="myButton">Click Me</button>
+    <p id="message">Click the button</p>
+
+    <script>
+        $(document).ready(function () {
+            $("#myButton").click(function () {
+
+                $("#message").text("Hello!");
+                $('#message').css("font-size", "30px");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
