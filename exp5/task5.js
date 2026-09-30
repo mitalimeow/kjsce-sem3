@@ -1,6 +1,4 @@
-// Task 5: Validate Patient Registration Details Using Regular Expressions
 
-// Individual Validation Functions
 function validatePatientName(name) {
     const regex = /^[A-Za-z\s]+$/;
     if (!name || name.trim() === '') {
@@ -48,7 +46,7 @@ function validateEmailAddress(email) {
 // Master Validation Function
 function validateRegistrationForm(details) {
     console.log("=== TASK 5: REGEX PATIENT VALIDATION ===");
-    
+
     const nameRes = validatePatientName(details.pname);
     const mobileRes = validateMobileNumber(details.mobile);
     const pidRes = validatePatientId(details.pid);
@@ -103,7 +101,7 @@ if (typeof document !== 'undefined') {
 
             if (!result.isAllValid) {
                 event.preventDefault(); // Prevent form submission
-                
+
                 // Display individual error messages beside fields
                 if (nameField) renderFieldError(nameField, result.nameRes.message);
                 if (pidField) renderFieldError(pidField, result.pidRes.message);

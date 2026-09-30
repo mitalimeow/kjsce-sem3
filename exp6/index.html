@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>jQuery</title>
+    <meta charset="UTF-8">
+    <title>Experiment 6 - jQuery & HTML Forms Validation</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-    <button id="myButton">Click Me</button>
-    <p id="message">Click the button</p>
+    <div class="card">
+        <h1>Experiment 6: Healthcare Patient Registration Portal</h1>
+        <p>Contains Task 1, Task 2, and Task 3 implementations using HTML5 forms and jQuery validation.</p>
+        <a href="patient-registration.html" class="btn">Open Patient Registration Portal</a>
+    </div>
+
+    <div class="demo-section">
+        <button id="myButton">Click Me</button>
+        <p id="message">Click the button</p>
+    </div>
 
     <script>
         $(document).ready(function () {
             $("#myButton").click(function () {
-
                 $("#message").text("Hello!");
                 $('#message').css("font-size", "30px");
             });

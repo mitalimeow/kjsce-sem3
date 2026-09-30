@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Patient Registration Portal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="portal-header">
+            <h1>Healthcare Patient Registration Portal</h1>
+            <p>Please enter complete patient details to register and request an appointment</p>
+        </div>
+
+        <!-- Success Notification Banner -->
+        <div id="successBanner" class="success-banner">
+            <h3>✓ Registration Successful!</h3>
+            <p>Patient record has been processed and appointment request received.</p>
+            <ul id="summaryList"></ul>
+        </div>
+
+        <form id="patientRegistrationForm" name="patientRegistrationForm" novalidate>
+            
+            <!-- Fieldset 1: Patient Basic Information -->
+            <fieldset>
+                <legend>Patient Information</legend>
+                <div class="form-grid">
+                    
+                    <!-- Patient Name -->
+                    <div class="form-group">
+                        <label for="patientName">Patient Name <span class="required-star">*</span></label>
+                        <input type="text" id="patientName" name="patientName" placeholder="e.g. John Doe">
+                        <span class="error-message" id="patientNameError"></span>
+                    </div>
+
+                    <!-- Patient ID -->
+                    <div class="form-group">
+                        <label for="patientId">Patient ID <span class="required-star">*</span></label>
+                        <input type="text" id="patientId" name="patientId" placeholder="e.g. 1001">
+                        <span class="error-message" id="patientIdError"></span>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="form-group">
+                        <label for="dob">Date of Birth <span class="required-star">*</span></label>
+                        <input type="date" id="dob" name="dob">
+                        <span class="error-message" id="dobError"></span>
+                    </div>
+
+                    <!-- Age (Number input type) -->
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="0" max="120" placeholder="e.g. 30">
+                        <span class="error-message" id="ageError"></span>
+                    </div>
+
+                    <!-- Gender (Radio buttons) -->
+                    <div class="form-group full-width">
+                        <label>Gender <span class="required-star">*</span></label>
+                        <div class="radio-group-container">
+                            <label class="radio-option" for="genderMale">
+                                <input type="radio" id="genderMale" name="gender" value="Male"> Male
+                            </label>
+                            <label class="radio-option" for="genderFemale">
+                                <input type="radio" id="genderFemale" name="gender" value="Female"> Female
+                            </label>
+                            <label class="radio-option" for="genderOther">
+                                <input type="radio" id="genderOther" name="gender" value="Other"> Other
+                            </label>
+                        </div>
+                        <span class="error-message" id="genderError"></span>
+                    </div>
+
+                    <!-- Blood Group (Select & Option) -->
+                    <div class="form-group">
+                        <label for="bloodGroup">Blood Group <span class="required-star">*</span></label>
+                        <select id="bloodGroup" name="bloodGroup">
+                            <option value="">Select Blood Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                        <span class="error-message" id="bloodGroupError"></span>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- Fieldset 2: Contact Information -->
+            <fieldset>
+                <legend>Contact Information</legend>
+                <div class="form-grid">
+
+                    <!-- Mobile Number -->
+                    <div class="form-group">
+                        <label for="mobileNumber">Mobile Number <span class="required-star">*</span></label>
+                        <input type="text" id="mobileNumber" name="mobileNumber" placeholder="10-digit mobile number">
+                        <span class="error-message" id="mobileNumberError"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required-star">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="patient@example.com">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+
+                    <!-- Emergency Contact -->
+                    <div class="form-group">
+                        <label for="emergencyContact">Emergency Contact <span class="required-star">*</span></label>
+                        <input type="text" id="emergencyContact" name="emergencyContact" placeholder="10-digit emergency contact">
+                        <span class="error-message" id="emergencyContactError"></span>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group full-width">
+                        <label for="address">Address <span class="required-star">*</span></label>
+                        <textarea id="address" name="address" placeholder="Enter full residential address"></textarea>
+                        <span class="error-message" id="addressError"></span>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- Fieldset 3: Department & Appointment -->
+            <fieldset>
+                <legend>Appointment Request</legend>
+                <div class="form-grid">
+
+                    <!-- Department (Select & Option) -->
+                    <div class="form-group">
+                        <label for="department">Department <span class="required-star">*</span></label>
+                        <select id="department" name="department">
+                            <option value="">Select Department</option>
+                            <option value="General Medicine">General Medicine</option>
+                            <option value="Cardiology">Cardiology</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Orthopedics">Orthopedics</option>
+                            <option value="Pediatrics">Pediatrics</option>
+                            <option value="Dermatology">Dermatology</option>
+                            <option value="ENT">ENT</option>
+                        </select>
+                        <span class="error-message" id="departmentError"></span>
+                    </div>
+
+                    <!-- Appointment Date -->
+                    <div class="form-group">
+                        <label for="appointmentDate">Appointment Date <span class="required-star">*</span></label>
+                        <input type="date" id="appointmentDate" name="appointmentDate">
+                        <span class="error-message" id="appointmentDateError"></span>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <!-- Submit and Reset Buttons -->
+            <div class="button-group">
+                <button type="reset" id="resetBtn">Reset Form</button>
+                <button type="submit" id="submitBtn">Register Patient</button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- jQuery Validation Script -->
+    <script>
+        $(document).ready(function () {
+
+            // Helper function to set error state
+            function setError(elementId, errorSpanId, message) {
+                if (elementId === 'gender') {
+                    $('input[name="gender"]').addClass('error');
+                } else {
+                    $('#' + elementId).addClass('error');
+                }
+                $('#' + errorSpanId).text(message).addClass('show');
+            }
+
+            // Helper function to clear error state
+            function clearError(elementId, errorSpanId) {
+                if (elementId === 'gender') {
+                    $('input[name="gender"]').removeClass('error');
+                } else {
+                    $('#' + elementId).removeClass('error');
+                }
+                $('#' + errorSpanId).text('').removeClass('show');
+            }
+
+            // Form Submit Validation Handler
+            $('#patientRegistrationForm').on('submit', function (e) {
+                e.preventDefault(); // Prevent form submission until validation passes
+                
+                let isValid = true;
+                $('#successBanner').hide();
+
+                // -------------------------------------------------------------
+                // TASK 2: Validate Required Patient Information
+                // -------------------------------------------------------------
+
+                // 1. Patient Name Validation
+                // Must not be empty, trimmed whitespace, alphabetic characters & spaces only
+                const nameVal = $.trim($('#patientName').val());
+                if (nameVal === '') {
+                    setError('patientName', 'patientNameError', 'Patient Name is required.');
+                    isValid = false;
+                } else if (!/^[A-Za-z\s]+$/.test(nameVal)) {
+                    setError('patientName', 'patientNameError', 'Patient Name must contain alphabetic characters and spaces only.');
+                    isValid = false;
+                } else {
+                    clearError('patientName', 'patientNameError');
+                }
+
+                // 2. Patient ID Validation
+                // Must not be empty, trimmed whitespace, must be an integer
+                const idVal = $.trim($('#patientId').val());
+                const integerRegex = /^\d+$/;
+                if (idVal === '') {
+                    setError('patientId', 'patientIdError', 'Patient ID is required.');
+                    isValid = false;
+                } else if (!integerRegex.test(idVal)) {
+                    setError('patientId', 'patientIdError', 'Patient ID must be a valid integer.');
+                    isValid = false;
+                } else {
+                    clearError('patientId', 'patientIdError');
+                }
+
+                // 3. Address Validation
+                // Must not be empty, trimmed whitespace
+                const addressVal = $.trim($('#address').val());
+                if (addressVal === '') {
+                    setError('address', 'addressError', 'Address is required.');
+                    isValid = false;
+                } else {
+                    clearError('address', 'addressError');
+                }
+
+                // -------------------------------------------------------------
+                // TASK 3: Validate Mobile Number, Email and Emergency Contact
+                // -------------------------------------------------------------
+
+                // 4. Mobile Number Validation
+                // 10-digit Indian mobile number regular expression
+                const mobileVal = $.trim($('#mobileNumber').val());
+                const indianMobileRegex = /^[6-9]\d{9}$/;
+                if (mobileVal === '') {
+                    setError('mobileNumber', 'mobileNumberError', 'Mobile Number is required.');
+                    isValid = false;
+                } else if (!indianMobileRegex.test(mobileVal)) {
+                    setError('mobileNumber', 'mobileNumberError', 'Please enter a valid 10-digit Indian mobile number.');
+                    isValid = false;
+                } else {
+                    clearError('mobileNumber', 'mobileNumberError');
+                }
+
+                // 5. Email Address Validation
+                const emailVal = $.trim($('#email').val());
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailVal === '') {
+                    setError('email', 'emailError', 'Email address is required.');
+                    isValid = false;
+                } else if (!emailRegex.test(emailVal)) {
+                    setError('email', 'emailError', 'Please enter a valid email address.');
+                    isValid = false;
+                } else {
+                    clearError('email', 'emailError');
+                }
+
+                // 6. Emergency Contact Validation
+                // Must be valid 10-digit mobile number
+                const emergencyVal = $.trim($('#emergencyContact').val());
+                if (emergencyVal === '') {
+                    setError('emergencyContact', 'emergencyContactError', 'Emergency Contact is required.');
+                    isValid = false;
+                } else if (!indianMobileRegex.test(emergencyVal)) {
+                    setError('emergencyContact', 'emergencyContactError', 'Please enter a valid 10-digit emergency contact number.');
+                    isValid = false;
+                } else {
+                    clearError('emergencyContact', 'emergencyContactError');
+                }
+
+                // -------------------------------------------------------------
+                // Additional Field Validations (DOB, Gender, Blood Group, Department, Appointment Date)
+                // -------------------------------------------------------------
+
+                // Date of Birth
+                const dobVal = $('#dob').val();
+                if (!dobVal) {
+                    setError('dob', 'dobError', 'Date of Birth is required.');
+                    isValid = false;
+                } else {
+                    clearError('dob', 'dobError');
+                }
+
+                // Age (optional numeric validation if provided)
+                const ageVal = $.trim($('#age').val());
+                if (ageVal !== '' && (isNaN(ageVal) || parseInt(ageVal, 10) < 0 || parseInt(ageVal, 10) > 120)) {
+                    setError('age', 'ageError', 'Please enter a valid age between 0 and 120.');
+                    isValid = false;
+                } else {
+                    clearError('age', 'ageError');
+                }
+
+                // Gender Selection
+                const genderVal = $('input[name="gender"]:checked').val();
+                if (!genderVal) {
+                    setError('gender', 'genderError', 'Please select a gender.');
+                    isValid = false;
+                } else {
+                    clearError('gender', 'genderError');
+                }
+
+                // Blood Group
+                const bloodGroupVal = $('#bloodGroup').val();
+                if (!bloodGroupVal) {
+                    setError('bloodGroup', 'bloodGroupError', 'Please select a blood group.');
+                    isValid = false;
+                } else {
+                    clearError('bloodGroup', 'bloodGroupError');
+                }
+
+                // Department
+                const deptVal = $('#department').val();
+                if (!deptVal) {
+                    setError('department', 'departmentError', 'Please select a department.');
+                    isValid = false;
+                } else {
+                    clearError('department', 'departmentError');
+                }
+
+                // Appointment Date
+                const appDateVal = $('#appointmentDate').val();
+                if (!appDateVal) {
+                    setError('appointmentDate', 'appointmentDateError', 'Please select an appointment date.');
+                    isValid = false;
+                } else {
+                    clearError('appointmentDate', 'appointmentDateError');
+                }
+
+                // Final Submission Check
+                if (isValid) {
+                    $('#summaryList').empty().append(
+                        `<li><strong>Name:</strong> ${nameVal}</li>` +
+                        `<li><strong>Patient ID:</strong> ${idVal}</li>` +
+                        `<li><strong>Mobile:</strong> ${mobileVal}</li>` +
+                        `<li><strong>Email:</strong> ${emailVal}</li>` +
+                        `<li><strong>Department:</strong> ${deptVal}</li>` +
+                        `<li><strong>Appointment Date:</strong> ${appDateVal}</li>`
+                    );
+                    $('#successBanner').fadeIn();
+                    $('html, body').animate({ scrollTop: 0 }, 'slow');
+                }
+            });
+
+            // Live input clearing of errors as user types/changes fields
+            $('input, select, textarea').on('input change', function () {
+                const id = $(this).attr('id');
+                const name = $(this).attr('name');
+                if (name === 'gender') {
+                    clearError('gender', 'genderError');
+                } else if (id) {
+                    clearError(id, id + 'Error');
+                }
+            });
+
+            // Reset Button Event - Clear all fields, errors, and success state
+            $('#patientRegistrationForm').on('reset', function () {
+                $('.error-message').text('').removeClass('show');
+                $('.error').removeClass('error');
+                $('#successBanner').hide();
+            });
+
+        });
+    </script>
+</body>
+</html>
